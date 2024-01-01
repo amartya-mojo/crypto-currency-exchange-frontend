@@ -3,7 +3,7 @@ import ExchangeForm from "./ExchangeForm";
 
 const Body = () => {
   return (
-    <div className="w-full h-[80vh] flex items-center justify-center flex-col bg-slate-800">
+    <div className="w-full h-[90vh] flex items-center justify-center flex-col">
       <ExchangeForm />
     </div>
   );

@@ -2,11 +2,28 @@ import axios from "axios";
 
 const BASE_URL = process.env.BASE_URL || "http://localhost:4500/api";
 
-export const fetchCryptoCurrencies = async () => {
+export const fetchCurrenciesData = async (endpoint) => {
   try {
-    let response = await axios.get(`${BASE_URL}/getCryptoCurrencies`);
+    let response = await axios.get(`${BASE_URL}/${endpoint}`);
     return response.data.data;
   } catch (e) {
     console.error(e);
+  }
+};
+
+export const fetchConvertedCurrencyAmount = async ({
+  convertFrom,
+  convertTo,
+  amount,
+}) => {
+  try {
+    let response = await axios.post(`${BASE_URL}/convertCurrencyAmount`, {
+      convertFrom: convertFrom,
+      convertTo: convertTo,
+      amount: amount,
+    });
+    return response.data.data;
+  } catch (error) {
+    console.error(error);
   }
 };
