@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = process.env.BASE_URL || "http://localhost:4500/api";
+const BASE_URL = "https://curr-crypto-exchange.onrender.com/api";
 
 export const fetchCurrenciesData = async (endpoint) => {
   try {
