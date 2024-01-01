@@ -77,7 +77,7 @@ const ExchangeForm = () => {
       {currencyData.cryptoCurrencyList && currencyData.normalCurrencyList ? (
         <form className="max-w-full min-w-full w-full flex items-center justify-center flex-col p-[1em]">
           <div className="flex min-w-full justify-between items-center py-1 ">
-            <div className="flex min-w-[70%] justify-between items-center py-1">
+            <div className="flex min-w-[100%] justify-between items-center py-1">
               <CurrencyDropdownMenu
                 incomingOptions={currencyData.cryptoCurrencyList}
                 setDataInParent={setCryptoCurrency}
@@ -95,22 +95,22 @@ const ExchangeForm = () => {
                 forNormal={true}
               />
             </div>
-            <div className="flex w-1/2 items-end justify-end py-1 ">
-              <label
-                htmlFor="exchangeAmount"
-                className="flex items-center w-1/2 py-1 px-1 font-bold text-lg border border-solid border-blue"
-              >
-                {isSwapped ? cryptoCurrency.symbol : exchangeToCurrency.sign}
-                <input
-                  type="number"
-                  name="exchangeAmount"
-                  value={exchangeAmount}
-                  onChange={handleExchangeAmountChange}
-                  className="appearance-none w-full pl-1"
-                  placeholder="Enter exchange amount"
-                />
-              </label>
-            </div>
+          </div>
+          <div className="flex w-full items-end justify-end py-1 ">
+            <label
+              htmlFor="exchangeAmount"
+              className="flex items-center w-full py-1 px-1 font-bold text-lg border-b-2 border-solid border-blue"
+            >
+              {isSwapped ? cryptoCurrency.symbol : exchangeToCurrency.sign}
+              <input
+                type="number"
+                name="exchangeAmount"
+                value={exchangeAmount}
+                onChange={handleExchangeAmountChange}
+                className="appearance-none w-full pl-1"
+                placeholder="Enter exchange amount"
+              />
+            </label>
           </div>
           <div
             className="mt-5 border border-solid border-slate-300 w-3/4 flex items-center justify-center rounded-md cursor-pointer bg-[#f0d78c] px-2 py-2"
